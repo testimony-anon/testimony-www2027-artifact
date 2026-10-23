@@ -1,0 +1,10 @@
+# UISemTest exported pytest suite
+
+This directory contains the 17 retained tests in `<ARTIFACT_ROOT>/eval/ui_semantics/ghost-20260921/ghost/full-01/cases/L2-PERM-01/union`.
+See `docs/EXPORT-FORMAT.md` in the repository.
+
+Run from the repository root:
+
+```sh
+.venv/bin/python -m pytest -q <ARTIFACT_ROOT>/eval/ui_semantics/ghost-20260921/ghost/pytest-export-final/L2-PERM-01
+```

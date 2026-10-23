@@ -1,0 +1,484 @@
+{
+  "subject": "cypress-realworld-app",
+  "pinned_commit": "bdf6169232b919d9618ec29032addbd865f986cd",
+  "lead": "L9",
+  "source_case": "L4-LIKE-NOTIFY-01",
+  "source_candidate": "v2-candidate-0054",
+  "business_rule": "A user can contribute at most one like to a transaction.",
+  "interpretation": "A successful repeated request alone is not a bug; duplicate persisted likes from the same user are the criterion.",
+  "independent_reproduction": "Plain urllib HTTP only; no Testimony code, LLM calls, injected faults, or frozen-result edits.",
+  "credential_recording": "Passwords and credential fields are redacted; cookies and authentication headers are not recorded.",
+  "base_url": "http://127.0.0.1:14101",
+  "started_at_utc": "2026-10-20T06:45:04.550082+00:00",
+  "python_version": "3.12.14",
+  "script_sha256": "cacc192979ffde123316c1f42e0bb708645c48bd79af2ec6ae53add69c5e4506",
+  "requested_rounds": 3,
+  "arms": [
+    {
+      "round": 1,
+      "arm": "same_user_twice",
+      "transaction_id": "zAWa-PdVi",
+      "user_ids": {
+        "A": "uBmeaz5pX",
+        "B": "GjWovtg2hr"
+      },
+      "like_requests": [
+        {
+          "actor": "B",
+          "status": 200,
+          "evidence_seq": 6
+        },
+        {
+          "actor": "B",
+          "status": 200,
+          "evidence_seq": 8
+        }
+      ],
+      "observations": [
+        {
+          "step": "before",
+          "evidence_seq": 5,
+          "count": 0,
+          "likes": [],
+          "by_actor": {
+            "A": 0,
+            "B": 0
+          }
+        },
+        {
+          "step": "after_1",
+          "evidence_seq": 7,
+          "count": 1,
+          "likes": [
+            {
+              "id": "aKBdNNzaQS",
+              "userId": "GjWovtg2hr",
+              "transactionId": "zAWa-PdVi"
+            }
+          ],
+          "by_actor": {
+            "A": 0,
+            "B": 1
+          }
+        },
+        {
+          "step": "after_2",
+          "evidence_seq": 9,
+          "count": 2,
+          "likes": [
+            {
+              "id": "aKBdNNzaQS",
+              "userId": "GjWovtg2hr",
+              "transactionId": "zAWa-PdVi"
+            },
+            {
+              "id": "heLlDwYyNM",
+              "userId": "GjWovtg2hr",
+              "transactionId": "zAWa-PdVi"
+            }
+          ],
+          "by_actor": {
+            "A": 0,
+            "B": 2
+          }
+        }
+      ],
+      "verdict": "BUG_REPRODUCED"
+    },
+    {
+      "round": 1,
+      "arm": "two_users_once_each",
+      "transaction_id": "fBO8l-o08V",
+      "user_ids": {
+        "A": "uBmeaz5pX",
+        "B": "GjWovtg2hr"
+      },
+      "like_requests": [
+        {
+          "actor": "B",
+          "status": 200,
+          "evidence_seq": 15
+        },
+        {
+          "actor": "A",
+          "status": 200,
+          "evidence_seq": 17
+        }
+      ],
+      "observations": [
+        {
+          "step": "before",
+          "evidence_seq": 14,
+          "count": 0,
+          "likes": [],
+          "by_actor": {
+            "A": 0,
+            "B": 0
+          }
+        },
+        {
+          "step": "after_1",
+          "evidence_seq": 16,
+          "count": 1,
+          "likes": [
+            {
+              "id": "zcEIQr5aPV",
+              "userId": "GjWovtg2hr",
+              "transactionId": "fBO8l-o08V"
+            }
+          ],
+          "by_actor": {
+            "A": 0,
+            "B": 1
+          }
+        },
+        {
+          "step": "after_2",
+          "evidence_seq": 18,
+          "count": 2,
+          "likes": [
+            {
+              "id": "zcEIQr5aPV",
+              "userId": "GjWovtg2hr",
+              "transactionId": "fBO8l-o08V"
+            },
+            {
+              "id": "s8KAZE0wPj",
+              "userId": "uBmeaz5pX",
+              "transactionId": "fBO8l-o08V"
+            }
+          ],
+          "by_actor": {
+            "A": 1,
+            "B": 1
+          }
+        }
+      ],
+      "verdict": "CONTROL_PASS"
+    },
+    {
+      "round": 2,
+      "arm": "same_user_twice",
+      "transaction_id": "2lwOrHukP5t",
+      "user_ids": {
+        "A": "uBmeaz5pX",
+        "B": "GjWovtg2hr"
+      },
+      "like_requests": [
+        {
+          "actor": "B",
+          "status": 200,
+          "evidence_seq": 24
+        },
+        {
+          "actor": "B",
+          "status": 200,
+          "evidence_seq": 26
+        }
+      ],
+      "observations": [
+        {
+          "step": "before",
+          "evidence_seq": 23,
+          "count": 0,
+          "likes": [],
+          "by_actor": {
+            "A": 0,
+            "B": 0
+          }
+        },
+        {
+          "step": "after_1",
+          "evidence_seq": 25,
+          "count": 1,
+          "likes": [
+            {
+              "id": "8xDp4Wz_w46",
+              "userId": "GjWovtg2hr",
+              "transactionId": "2lwOrHukP5t"
+            }
+          ],
+          "by_actor": {
+            "A": 0,
+            "B": 1
+          }
+        },
+        {
+          "step": "after_2",
+          "evidence_seq": 27,
+          "count": 2,
+          "likes": [
+            {
+              "id": "8xDp4Wz_w46",
+              "userId": "GjWovtg2hr",
+              "transactionId": "2lwOrHukP5t"
+            },
+            {
+              "id": "gzoMr2TnR2H",
+              "userId": "GjWovtg2hr",
+              "transactionId": "2lwOrHukP5t"
+            }
+          ],
+          "by_actor": {
+            "A": 0,
+            "B": 2
+          }
+        }
+      ],
+      "verdict": "BUG_REPRODUCED"
+    },
+    {
+      "round": 2,
+      "arm": "two_users_once_each",
+      "transaction_id": "Gi2Od3NFR",
+      "user_ids": {
+        "A": "uBmeaz5pX",
+        "B": "GjWovtg2hr"
+      },
+      "like_requests": [
+        {
+          "actor": "B",
+          "status": 200,
+          "evidence_seq": 33
+        },
+        {
+          "actor": "A",
+          "status": 200,
+          "evidence_seq": 35
+        }
+      ],
+      "observations": [
+        {
+          "step": "before",
+          "evidence_seq": 32,
+          "count": 0,
+          "likes": [],
+          "by_actor": {
+            "A": 0,
+            "B": 0
+          }
+        },
+        {
+          "step": "after_1",
+          "evidence_seq": 34,
+          "count": 1,
+          "likes": [
+            {
+              "id": "Y1R7g0yQ6J",
+              "userId": "GjWovtg2hr",
+              "transactionId": "Gi2Od3NFR"
+            }
+          ],
+          "by_actor": {
+            "A": 0,
+            "B": 1
+          }
+        },
+        {
+          "step": "after_2",
+          "evidence_seq": 36,
+          "count": 2,
+          "likes": [
+            {
+              "id": "Y1R7g0yQ6J",
+              "userId": "GjWovtg2hr",
+              "transactionId": "Gi2Od3NFR"
+            },
+            {
+              "id": "YfpO4vg084",
+              "userId": "uBmeaz5pX",
+              "transactionId": "Gi2Od3NFR"
+            }
+          ],
+          "by_actor": {
+            "A": 1,
+            "B": 1
+          }
+        }
+      ],
+      "verdict": "CONTROL_PASS"
+    },
+    {
+      "round": 3,
+      "arm": "same_user_twice",
+      "transaction_id": "MFdAyHPWuP",
+      "user_ids": {
+        "A": "uBmeaz5pX",
+        "B": "GjWovtg2hr"
+      },
+      "like_requests": [
+        {
+          "actor": "B",
+          "status": 200,
+          "evidence_seq": 42
+        },
+        {
+          "actor": "B",
+          "status": 200,
+          "evidence_seq": 44
+        }
+      ],
+      "observations": [
+        {
+          "step": "before",
+          "evidence_seq": 41,
+          "count": 0,
+          "likes": [],
+          "by_actor": {
+            "A": 0,
+            "B": 0
+          }
+        },
+        {
+          "step": "after_1",
+          "evidence_seq": 43,
+          "count": 1,
+          "likes": [
+            {
+              "id": "3cLVgL-7Zf",
+              "userId": "GjWovtg2hr",
+              "transactionId": "MFdAyHPWuP"
+            }
+          ],
+          "by_actor": {
+            "A": 0,
+            "B": 1
+          }
+        },
+        {
+          "step": "after_2",
+          "evidence_seq": 45,
+          "count": 2,
+          "likes": [
+            {
+              "id": "3cLVgL-7Zf",
+              "userId": "GjWovtg2hr",
+              "transactionId": "MFdAyHPWuP"
+            },
+            {
+              "id": "6ibiRBKNYQ",
+              "userId": "GjWovtg2hr",
+              "transactionId": "MFdAyHPWuP"
+            }
+          ],
+          "by_actor": {
+            "A": 0,
+            "B": 2
+          }
+        }
+      ],
+      "verdict": "BUG_REPRODUCED"
+    },
+    {
+      "round": 3,
+      "arm": "two_users_once_each",
+      "transaction_id": "HTBSUAQi8en",
+      "user_ids": {
+        "A": "uBmeaz5pX",
+        "B": "GjWovtg2hr"
+      },
+      "like_requests": [
+        {
+          "actor": "B",
+          "status": 200,
+          "evidence_seq": 51
+        },
+        {
+          "actor": "A",
+          "status": 200,
+          "evidence_seq": 53
+        }
+      ],
+      "observations": [
+        {
+          "step": "before",
+          "evidence_seq": 50,
+          "count": 0,
+          "likes": [],
+          "by_actor": {
+            "A": 0,
+            "B": 0
+          }
+        },
+        {
+          "step": "after_1",
+          "evidence_seq": 52,
+          "count": 1,
+          "likes": [
+            {
+              "id": "XC7XEQNpGFN",
+              "userId": "GjWovtg2hr",
+              "transactionId": "HTBSUAQi8en"
+            }
+          ],
+          "by_actor": {
+            "A": 0,
+            "B": 1
+          }
+        },
+        {
+          "step": "after_2",
+          "evidence_seq": 54,
+          "count": 2,
+          "likes": [
+            {
+              "id": "XC7XEQNpGFN",
+              "userId": "GjWovtg2hr",
+              "transactionId": "HTBSUAQi8en"
+            },
+            {
+              "id": "aIWZbqkYDTm",
+              "userId": "uBmeaz5pX",
+              "transactionId": "HTBSUAQi8en"
+            }
+          ],
+          "by_actor": {
+            "A": 1,
+            "B": 1
+          }
+        }
+      ],
+      "verdict": "CONTROL_PASS"
+    }
+  ],
+  "verdict": "BUG_REPRODUCED",
+  "finished_at_utc": "2026-10-20T06:45:05.451089+00:00",
+  "http_exchange_count": 54,
+  "environment": {
+    "source_commit": "bdf6169232b919d9618ec29032addbd865f986cd",
+    "upstream_repository": "https://github.com/cypress-io/cypress-realworld-app",
+    "source_files_sha256": {
+      "backend/app.ts": "fefaefa5d78484efc55d5e625783c303bae0488a8588bb69eb9bab9d00f172c3",
+      "backend/database.ts": "31abf78ad783723d364086ab52755b8ed9ce20d9a28764e15c95118a48e142e9",
+      "backend/like-routes.ts": "9a29aa1abcf3584db249ef345d531552d039da43ae8265f3b5afb35a053cd9e7",
+      "src/components/TransactionDetail.tsx": "70767aeb20d67fb8caba3526a56cf00a6fefdfce6d89a28b5b269967dc8799ce",
+      "src/utils/transactionUtils.ts": "6a3c0b0ca268fa123bc30d5fec677b13b8377ff4a2bfea4c87cc1e1bfcdc829c",
+      "data/database-seed.json": "694f9f9e955211cc6037a1d58eb020671375491ea670a3fcf6183a81a34da715",
+      "yarn.lock": "770cc4b7991403c3e590e6281b3a4a4ce9c56a44852efab203983453fc91ab38",
+      "src/aws-exports.js": "e6dea7962e0a7c9aad93b551985e5e9924d258554f52caa48271ec8dffd225d9"
+    },
+    "application_business_source_modified": false,
+    "loopback_binding_enforced_by_launcher": true,
+    "node_version": "v22.22.1",
+    "listener": "127.0.0.1:14101",
+    "backend_stopped": true,
+    "execution_gate_restored": true,
+    "script_exit_status": 0,
+    "source_files_unchanged_after_execution": true,
+    "protected_existing_files_unchanged": true,
+    "original_subject_database_unchanged": true,
+    "generated_support_file": {
+      "path": "src/aws-exports.js",
+      "copied_from_pinned_file": "scripts/mock-aws-exports.js",
+      "reason": "Standard mock AWS export configuration; no cloud authentication is enabled."
+    }
+  },
+  "verification": {
+    "http_records_match_summary": true,
+    "three_treatment_rounds_reproduced": true,
+    "three_two_user_controls_passed": true,
+    "six_distinct_fresh_transactions": true,
+    "six_successful_resets": true,
+    "no_credentials_recorded": true
+  }
+}

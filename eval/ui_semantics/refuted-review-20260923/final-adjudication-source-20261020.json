@@ -1,0 +1,83 @@
+{
+  "adjudication_date": "2026-10-20",
+  "decision_basis": "User-authorized adjudication after independent controlled HTTP reproduction; no change to the frozen generation or validation run.",
+  "affected_records": {
+    "subject": "rwa",
+    "case": "L4-LIKE-NOTIFY-01",
+    "candidate_ids": [
+      "v2-candidate-0054"
+    ],
+    "lead": "L9"
+  },
+  "initial_code": "RD?",
+  "final_code": "RD",
+  "paper_defect_id": "D9",
+  "business_rule": "A user contributes at most one like to a transaction.",
+  "decision_text": "Associate the candidate with confirmed defect D9: the same user can persist two distinct likes for one transaction. Three independent treatment rounds each returned HTTP 200 twice and stored 0, then 1, then 2 likes; three separately reset two-user controls stored exactly one like per user. The criterion is duplicate persisted records, not the status code alone.",
+  "source_review": {
+    "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+    "sha256": "8c64b28f40584d2b40a36fd998960e1108b8c946cebfa53e822dac0d90206509",
+    "record_index": 17,
+    "initial_classification": {
+      "code": "RD?",
+      "lead": "L9",
+      "note": "The candidate assumes a second like on the same transaction is rejected and likes stays unchanged; in fact the second POST /likes returns 200 and appends a second like record (createLikes in the source code has no de-duplication). This is a lead that a duplicate like is not rejected; it counts as a real defect only after being reproduced separately in a clean environment.",
+      "reviewed_at": "2026-09-12",
+      "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+    }
+  },
+  "original_m12_evidence": {
+    "path": "eval/ui_semantics/deepseek-full-20260912/rwa/m11fix-02/cases/L4-LIKE-NOTIFY-01/union/M12/v2-candidate-0054/execution_evidence.json",
+    "data_volume": "vol1-mainline-runs-conduit-rwa.tar.zst",
+    "protocol_verdict_preserved": "refuted"
+  },
+  "reproduction_sources": [
+    {
+      "path": "eval/ui_semantics/bug-leads-20261020/rwa-duplicate-like/reproduce_rwa_duplicate_likes.py",
+      "sha256": "cacc192979ffde123316c1f42e0bb708645c48bd79af2ec6ae53add69c5e4506"
+    },
+    {
+      "path": "eval/ui_semantics/bug-leads-20261020/rwa-duplicate-like/evidence.jsonl",
+      "sha256": "e97e753e8106929c4cb0d7f39c17e73eb51b645890bf9832ff551626134bf5ea"
+    },
+    {
+      "path": "eval/ui_semantics/bug-leads-20261020/rwa-duplicate-like/summary.json",
+      "sha256": "6c98706c7e306c4ee64c7e869629555259f5aa3ee8e22045b62a612f3bf7a72e"
+    }
+  ],
+  "subject_version": {
+    "repository": "https://github.com/cypress-io/cypress-realworld-app",
+    "commit": "bdf6169232b919d9618ec29032addbd865f986cd",
+    "application_business_source_modified": false,
+    "source_files_sha256": {
+      "backend/app.ts": "fefaefa5d78484efc55d5e625783c303bae0488a8588bb69eb9bab9d00f172c3",
+      "backend/database.ts": "31abf78ad783723d364086ab52755b8ed9ce20d9a28764e15c95118a48e142e9",
+      "backend/like-routes.ts": "9a29aa1abcf3584db249ef345d531552d039da43ae8265f3b5afb35a053cd9e7",
+      "src/components/TransactionDetail.tsx": "70767aeb20d67fb8caba3526a56cf00a6fefdfce6d89a28b5b269967dc8799ce",
+      "src/utils/transactionUtils.ts": "6a3c0b0ca268fa123bc30d5fec677b13b8377ff4a2bfea4c87cc1e1bfcdc829c",
+      "data/database-seed.json": "694f9f9e955211cc6037a1d58eb020671375491ea670a3fcf6183a81a34da715",
+      "yarn.lock": "770cc4b7991403c3e590e6281b3a4a4ce9c56a44852efab203983453fc91ab38",
+      "src/aws-exports.js": "e6dea7962e0a7c9aad93b551985e5e9924d258554f52caa48271ec8dffd225d9"
+    }
+  },
+  "reproduction_result": {
+    "verdict": "BUG_REPRODUCED",
+    "treatment_rounds": 3,
+    "control_rounds": 3,
+    "seed_resets": 6,
+    "http_exchanges": 54
+  },
+  "prior_final_counts": {
+    "RD": 22,
+    "WH": 63,
+    "IP": 8,
+    "RD?": 1
+  },
+  "updated_final_counts": {
+    "RD": 23,
+    "WH": 63,
+    "IP": 8,
+    "RD?": 0
+  },
+  "preserved_records": "The original 57-candidate and 37-candidate reviews, initial classifications, M12 evidence and verdicts, generated test suites and prior D8 adjudication are unchanged."
+}

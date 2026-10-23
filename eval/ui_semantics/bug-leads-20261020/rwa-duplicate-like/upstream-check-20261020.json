@@ -1,0 +1,225 @@
+{
+  "checked_on": "2026-10-20",
+  "date_timezone": "America/Denver",
+  "repository": "cypress-io/cypress-realworld-app",
+  "default_branch": "develop",
+  "default_branch_head": "0729f68ac220f7cda4ad09c5693dba11d7c532c6",
+  "default_branch_head_commit_date_utc": "2026-10-07T14:35:04Z",
+  "pinned_reproduction_commit": "bdf6169232b919d9618ec29032addbd865f986cd",
+  "scope": "GitHub REST issue/PR search, related issue and pull request metadata and diffs, and source inspection at the default-branch snapshot. No remote writes.",
+  "historical_report": {
+    "number": 111,
+    "title": "MVP Polish",
+    "url": "https://github.com/cypress-io/cypress-realworld-app/issues/111",
+    "state": "closed",
+    "state_reason": "completed",
+    "closed_at_utc": "2020-02-13T18:23:06Z",
+    "relevant_task": "Transaction Detail, prevent multiple likes",
+    "closing_pull_request": 112
+  },
+  "historical_fix": {
+    "pull_request": 112,
+    "url": "https://github.com/cypress-io/cypress-realworld-app/pull/112",
+    "merged": true,
+    "merged_at_utc": "2020-02-13T18:23:06Z",
+    "merge_commit": "f54f640111d78232bf70e08ab130e05d34e9f563",
+    "specific_like_fix_commit": "843b637900fbb54ba25675ce112e4e45a47d67bd",
+    "specific_like_fix_url": "https://github.com/cypress-io/cypress-realworld-app/commit/843b637900fbb54ba25675ce112e4e45a47d67bd",
+    "specific_like_fix_files": [
+      "src/components/TransactionDetail.tsx",
+      "src/utils/__tests__/transactionUtils.test.ts",
+      "src/utils/transactionUtils.ts"
+    ],
+    "finding": "The like-specific commit adds UI button disabling, the current-user-like helper, and its tests. It does not modify the backend like route or storage logic. The enclosing PR also contains unrelated backend payment changes."
+  },
+  "current_source_files": [
+    {
+      "path": "backend/database.ts",
+      "git_blob_sha": "e5af2ac83f5f653f0b954e2ad64c83bc8192bfd3",
+      "sha256": "31abf78ad783723d364086ab52755b8ed9ce20d9a28764e15c95118a48e142e9",
+      "url": "https://github.com/cypress-io/cypress-realworld-app/blob/0729f68ac220f7cda4ad09c5693dba11d7c532c6/backend/database.ts",
+      "matches_pinned_reproduction_file": true
+    },
+    {
+      "path": "backend/like-routes.ts",
+      "git_blob_sha": "ba5af084e7857fc946aa8bd6f629153663a39262",
+      "sha256": "9a29aa1abcf3584db249ef345d531552d039da43ae8265f3b5afb35a053cd9e7",
+      "url": "https://github.com/cypress-io/cypress-realworld-app/blob/0729f68ac220f7cda4ad09c5693dba11d7c532c6/backend/like-routes.ts",
+      "matches_pinned_reproduction_file": true
+    },
+    {
+      "path": "src/components/TransactionDetail.tsx",
+      "git_blob_sha": "44d95448245b3e0d15a353a69c987d5adae2a77b",
+      "sha256": "70767aeb20d67fb8caba3526a56cf00a6fefdfce6d89a28b5b269967dc8799ce",
+      "url": "https://github.com/cypress-io/cypress-realworld-app/blob/0729f68ac220f7cda4ad09c5693dba11d7c532c6/src/components/TransactionDetail.tsx",
+      "matches_pinned_reproduction_file": true
+    },
+    {
+      "path": "src/utils/transactionUtils.ts",
+      "git_blob_sha": "b02c17851852a78df6190da36bacd2a173843365",
+      "sha256": "6a3c0b0ca268fa123bc30d5fec677b13b8377ff4a2bfea4c87cc1e1bfcdc829c",
+      "url": "https://github.com/cypress-io/cypress-realworld-app/blob/0729f68ac220f7cda4ad09c5693dba11d7c532c6/src/utils/transactionUtils.ts",
+      "matches_pinned_reproduction_file": true
+    }
+  ],
+  "searches": [
+    {
+      "query": "repo:cypress-io/cypress-realworld-app in:title,body likes",
+      "total_count": 11,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 1710,
+          "title": "Flake demo",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/pull/1710",
+          "type": "pr"
+        },
+        {
+          "number": 1666,
+          "title": "Flaky unit tests",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/1666",
+          "type": "issue"
+        },
+        {
+          "number": 1332,
+          "title": "Flaky E2E ui/notifications.spec.ts test",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/1332",
+          "type": "issue"
+        },
+        {
+          "number": 403,
+          "title": "Flaky notifications test for like in Firefox Mobile Viewport",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/403",
+          "type": "issue"
+        },
+        {
+          "number": 462,
+          "title": "Cypress fails with 404 on `db:seed`",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/462",
+          "type": "issue"
+        },
+        {
+          "number": 146,
+          "title": "Test Seed Endpoints",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/146",
+          "type": "issue"
+        },
+        {
+          "number": 32,
+          "title": "Notifications",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/32",
+          "type": "issue"
+        },
+        {
+          "number": 64,
+          "title": "Transaction Detail Page",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/64",
+          "type": "issue"
+        },
+        {
+          "number": 65,
+          "title": "Transaction Like",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/65",
+          "type": "issue"
+        },
+        {
+          "number": 9,
+          "title": "Like API",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/9",
+          "type": "issue"
+        },
+        {
+          "number": 111,
+          "title": "MVP Polish",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/111",
+          "type": "issue"
+        }
+      ]
+    },
+    {
+      "query": "repo:cypress-io/cypress-realworld-app in:title,body \"duplicate likes\"",
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    },
+    {
+      "query": "repo:cypress-io/cypress-realworld-app in:title,body \"multiple likes\"",
+      "total_count": 1,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 111,
+          "title": "MVP Polish",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/111",
+          "type": "issue"
+        }
+      ]
+    },
+    {
+      "query": "repo:cypress-io/cypress-realworld-app in:title,body \"POST /likes\"",
+      "total_count": 3,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 1710,
+          "title": "Flake demo",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/pull/1710",
+          "type": "pr"
+        },
+        {
+          "number": 403,
+          "title": "Flaky notifications test for like in Firefox Mobile Viewport",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/403",
+          "type": "issue"
+        },
+        {
+          "number": 9,
+          "title": "Like API",
+          "state": "closed",
+          "url": "https://github.com/cypress-io/cypress-realworld-app/issues/9",
+          "type": "issue"
+        }
+      ]
+    },
+    {
+      "query": "repo:cypress-io/cypress-realworld-app in:title,body \"same user\" \"like\"",
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    },
+    {
+      "query": "repo:cypress-io/cypress-realworld-app in:title,body \"like\" \"idempotent\"",
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  ],
+  "findings": {
+    "related_historical_report_exists": true,
+    "historical_ui_fix_merged": true,
+    "backend_same_user_transaction_deduplication_present": false,
+    "separate_backend_fix_identified_in_recorded_searches": false,
+    "default_branch_relevant_files_identical_to_pinned_version": true,
+    "status": "Related UI fix merged in PR #112; the API-side duplicate-like guard remains absent in the inspected develop snapshot."
+  },
+  "links": {
+    "reproduction_summary": "summary.json",
+    "reproduction_evidence": "evidence.jsonl",
+    "adjudication": "../../refuted-review-20260923/final-adjudication-source-20261020.json",
+    "upstream_status": "UPSTREAM-STATUS.md"
+  }
+}

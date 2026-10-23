@@ -1,0 +1,2381 @@
+{
+  "description": "Current combined classification of the 94 refuted candidates, applying the recorded D8 adjudication of 2026-09-23 and D9 adjudication after independent reproduction on 2026-10-20. Initial review labels and frozen M12 outcomes are preserved.",
+  "sources": [
+    {
+      "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+      "sha256": "8c64b28f40584d2b40a36fd998960e1108b8c946cebfa53e822dac0d90206509",
+      "records": 57
+    },
+    {
+      "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+      "sha256": "0bd8ab426fba96ad8bf1bca4aeb6e602d012fc684bd22b5848699bd794f9c534",
+      "records": 37
+    },
+    {
+      "path": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "sha256": "43b6ea2be1c011fd8e47f94b02f022414de7586c4baf51594d2de9942051555f"
+    },
+    {
+      "path": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20261020.json",
+      "sha256": "f11b44fe1eecf965c4c9a360b41391fa45fb06db75e59d2a166c4c6ab2f0cfcd"
+    }
+  ],
+  "classification_legend": {
+    "RD": "Linked to a confirmed application defect",
+    "WH": "Error in the candidate hypothesis",
+    "IP": "Ill-posed validation scenario",
+    "RD?": "Awaiting controlled reproduction"
+  },
+  "total": 94,
+  "counts": {
+    "RD": 23,
+    "WH": 63,
+    "IP": 8,
+    "RD?": 0
+  },
+  "by_subject": {
+    "conduit": {
+      "RD": 1,
+      "WH": 5,
+      "IP": 6,
+      "RD?": 0
+    },
+    "rwa": {
+      "RD": 8,
+      "WH": 35,
+      "IP": 2,
+      "RD?": 0
+    },
+    "umami": {
+      "RD": 0,
+      "WH": 2,
+      "IP": 0,
+      "RD?": 0
+    },
+    "paperless": {
+      "RD": 14,
+      "WH": 19,
+      "IP": 0,
+      "RD?": 0
+    },
+    "ghost": {
+      "RD": 0,
+      "WH": 2,
+      "IP": 0,
+      "RD?": 0
+    }
+  },
+  "linked_candidate_counts_by_paper_defect": {
+    "D1": 5,
+    "D2": 1,
+    "D5": 1,
+    "D7": 1,
+    "D8": 14,
+    "D9": 1
+  },
+  "records_with_updated_classification": 15,
+  "records": [
+    {
+      "subject": "conduit",
+      "run": "m11fix-01",
+      "case": "L1-ARTICLE-07",
+      "candidate_id": "v2-candidate-0004",
+      "contract_kind": "C02",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 1
+      },
+      "initial_classification": {
+        "code": "RD",
+        "lead": "L6",
+        "note": "tagList after creation drops the 2-char tag 'xy' that the create response echoed (real defect: tags of length<=2 silently dropped)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "RD",
+        "lead": "L6",
+        "note": "tagList after creation drops the 2-char tag 'xy' that the create response echoed (real defect: tags of length<=2 silently dropped)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors",
+        "paper_defect_id": "D5"
+      }
+    },
+    {
+      "subject": "conduit",
+      "run": "m11fix-01",
+      "case": "L2-ARTICLE-01",
+      "candidate_id": "v2-candidate-0022",
+      "contract_kind": "C06",
+      "protocol": "V6",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 2
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "hypothesis: replaying an identical article body is rejected with 422; app created a second article (201) - duplicate titles are allowed by design",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "hypothesis: replaying an identical article body is rejected with 422; app created a second article (201) - duplicate titles are allowed by design",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "conduit",
+      "run": "m11fix-01",
+      "case": "L3-SOCIAL-02",
+      "candidate_id": "v2-candidate-0005",
+      "contract_kind": "C11",
+      "protocol": "V7",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 3
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "unfavorite is expected to remove the article from the global article list; the list is not filtered by favorites",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "unfavorite is expected to remove the article from the global article list; the list is not filtered by favorites",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "conduit",
+      "run": "m11fix-01",
+      "case": "L3-SOCIAL-02",
+      "candidate_id": "v2-candidate-0035",
+      "contract_kind": "C12",
+      "protocol": "V7",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 4
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "same as v2-candidate-0005 (second predicate variant)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "same as v2-candidate-0005 (second predicate variant)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "conduit",
+      "run": "m11fix-01",
+      "case": "L4-COMMENT-01",
+      "candidate_id": "v2-candidate-0008",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 5
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "createdAt asserted as yyyy-mm-dd; the field is an ISO-8601 timestamp",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "createdAt asserted as yyyy-mm-dd; the field is an ISO-8601 timestamp",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "conduit",
+      "run": "m11fix-01",
+      "case": "L4-EDIT-01",
+      "candidate_id": "v2-candidate-0032",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 6
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "createdAt asserted as yyyy-mm-dd for every article; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "createdAt asserted as yyyy-mm-dd for every article; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "conduit",
+      "run": "m11fix-01",
+      "case": "L4-FOLLOW-01",
+      "candidate_id": "v2-candidate-0008",
+      "contract_kind": "C03",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 7
+      },
+      "initial_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "unfollow expected to shrink the feed by one, but the fresh replay's feed was already empty before the unfollow (before_count 0): the followed author's articles were not part of the replayed setup, so the instance has no observable effect; verify feed content while following before treating as a defect",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "unfollow expected to shrink the feed by one, but the fresh replay's feed was already empty before the unfollow (before_count 0): the followed author's articles were not part of the replayed setup, so the instance has no observable effect; verify feed content while following before treating as a defect",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "conduit",
+      "run": "m11fix-01",
+      "case": "L4-FOLLOW-01",
+      "candidate_id": "v2-candidate-0009",
+      "contract_kind": "C02",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 8
+      },
+      "initial_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "articlesCount delta -1 after unfollow; feed empty before and after in the fresh replay (no effect to observe)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "articlesCount delta -1 after unfollow; feed empty before and after in the fresh replay (no effect to observe)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "conduit",
+      "run": "m11fix-01",
+      "case": "L4-FOLLOW-01",
+      "candidate_id": "v2-candidate-0022",
+      "contract_kind": "C03",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 9
+      },
+      "initial_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "same as v2-candidate-0008",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "same as v2-candidate-0008",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "conduit",
+      "run": "m11fix-01",
+      "case": "L4-FOLLOW-01",
+      "candidate_id": "v2-candidate-0023",
+      "contract_kind": "C02",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 10
+      },
+      "initial_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "same as v2-candidate-0009",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "same as v2-candidate-0009",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "conduit",
+      "run": "m11fix-01",
+      "case": "L4-FOLLOW-01",
+      "candidate_id": "v2-candidate-0052",
+      "contract_kind": "C03",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 11
+      },
+      "initial_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "same as v2-candidate-0008",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "same as v2-candidate-0008",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "conduit",
+      "run": "m11fix-01",
+      "case": "L4-FOLLOW-01",
+      "candidate_id": "v2-candidate-0053",
+      "contract_kind": "C02",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 12
+      },
+      "initial_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "same as v2-candidate-0009",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "same as v2-candidate-0009",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-02",
+      "case": "L1-BANK-03",
+      "candidate_id": "v2-candidate-0005",
+      "contract_kind": "C03",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 13
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "The candidate requires the account to be removed from listBankAccount after deletion; RWA uses soft deletion (isDeleted=true, still in the list, filtered on the UI side), so under the API semantics the correct relation is the isDeleted flip, not removal. After the D6 fix the candidate changed from not_evaluable to evaluable and was correctly refuted.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "The candidate requires the account to be removed from listBankAccount after deletion; RWA uses soft deletion (isDeleted=true, still in the list, filtered on the UI side), so under the API semantics the correct relation is the isDeleted flip, not removal. After the D6 fix the candidate changed from not_evaluable to evaluable and was correctly refuted.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-02",
+      "case": "L1-DETAIL-02",
+      "candidate_id": "v2-candidate-0006",
+      "contract_kind": "C01",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 14
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "member to find in $.transaction.likes taken from the producer response '$' which is the plain text 'OK'; the like itself was added",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "member to find in $.transaction.likes taken from the producer response '$' which is the plain text 'OK'; the like itself was added",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-02",
+      "case": "L3-BANK-01",
+      "candidate_id": "v2-candidate-0020",
+      "contract_kind": "C03",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 15
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "The candidate requires the account to be removed from listBankAccount after deletion; RWA uses soft deletion (isDeleted=true, still in the list, filtered on the UI side), so under the API semantics the correct relation is the isDeleted flip, not removal. After the D6 fix the candidate changed from not_evaluable to evaluable and was correctly refuted.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "The candidate requires the account to be removed from listBankAccount after deletion; RWA uses soft deletion (isDeleted=true, still in the list, filtered on the UI side), so under the API semantics the correct relation is the isDeleted flip, not removal. After the D6 fix the candidate changed from not_evaluable to evaluable and was correctly refuted.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-02",
+      "case": "L4-LIKE-NOTIFY-01",
+      "candidate_id": "v2-candidate-0015",
+      "contract_kind": "C01",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 16
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "The member is taken from the producer response '$', but the response of POST /likes is the plain text 'OK', so matching by $.id is meaningless; the candidate is mis-constructed.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "The member is taken from the producer response '$', but the response of POST /likes is the plain text 'OK', so matching by $.id is meaningless; the candidate is mis-constructed.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-02",
+      "case": "L4-LIKE-NOTIFY-01",
+      "candidate_id": "v2-candidate-0054",
+      "contract_kind": "C05",
+      "protocol": "V5",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 17
+      },
+      "initial_classification": {
+        "code": "RD?",
+        "lead": "L9",
+        "note": "The candidate assumes a second like on the same transaction is rejected and likes stays unchanged; in fact the second POST /likes returns 200 and appends a second like record (createLikes in the source code has no de-duplication). This is a lead that a duplicate like is not rejected; it counts as a real defect only after being reproduced separately in a clean environment.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "RD",
+        "lead": "L9",
+        "paper_defect_id": "D9",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20261020.json",
+        "adjudicated_at": "2026-10-20",
+        "note": "Associate the candidate with confirmed defect D9: the same user can persist two distinct likes for one transaction. Three independent treatment rounds each returned HTTP 200 twice and stored 0, then 1, then 2 likes; three separately reset two-user controls stored exactly one like per user. The criterion is duplicate persisted records, not the status code alone."
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20261020.json"
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-02",
+      "case": "L4-THIRD-PARTY-COMMENT-01",
+      "candidate_id": "v2-candidate-0038",
+      "contract_kind": "C01",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 18
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "After third party actor_b comments on someone else's transaction, the candidate asserts that actor_b's own unread notifications gain one entry; the implementation only notifies the transaction's sender/receiver (database.ts createComments) and a third party receives no notification, so the refutation is correct.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "After third party actor_b comments on someone else's transaction, the candidate asserts that actor_b's own unread notifications gain one entry; the implementation only notifies the transaction's sender/receiver (database.ts createComments) and a third party receives no notification, so the refutation is correct.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-02",
+      "case": "L4-THIRD-PARTY-LIKE-01",
+      "candidate_id": "v2-candidate-0043",
+      "contract_kind": "C01",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 19
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "After third party actor_b likes someone else's transaction, the candidate asserts that actor_b's own unread notifications gain one entry; the implementation only notifies the sender/receiver (database.ts createLikes), so the refutation is correct.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "After third party actor_b likes someone else's transaction, the candidate asserts that actor_b's own unread notifications gain one entry; the implementation only notifies the sender/receiver (database.ts createLikes), so the refutation is correct.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-02",
+      "case": "L4-THIRD-PARTY-LIKE-01",
+      "candidate_id": "v2-candidate-0049",
+      "contract_kind": "C14",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 20
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "P19 treats pageData.limit (10) as the result count, but the public feed actually has only 5 entries; limit is the page capacity, not a count, so the candidate is wrong.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "P19 treats pageData.limit (10) as the result count, but the public feed actually has only 5 entries; limit is the page capacity, not a count, so the candidate is wrong.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-DETAIL-01",
+      "candidate_id": "v2-candidate-0017",
+      "contract_kind": "C02",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 21
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "amount literal 11 taken from the request string; the API stores cents (1100)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "amount literal 11 taken from the request string; the API stores cents (1100)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-FEED-04",
+      "candidate_id": "v2-candidate-0008",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 22
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == pageData.limit; the last page holds fewer items (5 < 10)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == pageData.limit; the last page holds fewer items (5 < 10)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-FEED-04",
+      "candidate_id": "v2-candidate-0009",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 23
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "every public-feed item has privacyLevel 'public'; the feed also lists contacts-level transactions of contacts (app design)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "every public-feed item has privacyLevel 'public'; the feed also lists contacts-level transactions of contacts (app design)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-FEED-04",
+      "candidate_id": "v2-candidate-0030",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 24
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "page <= totalPages fails for an empty list (page=1,totalPages=0); same caveat as B-R14",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "page <= totalPages fails for an empty list (page=1,totalPages=0); same caveat as B-R14",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-FEED-04",
+      "candidate_id": "v2-candidate-0051",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 25
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "createdAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "createdAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-FEED-05",
+      "candidate_id": "v2-candidate-0030",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 26
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "amount range 0..100 read from the UI slider declaration (dollars); API amounts are cents",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "amount range 0..100 read from the UI slider declaration (dollars); API amounts are cents",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-FEED-05",
+      "candidate_id": "v2-candidate-0064",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 27
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "page <= totalPages on an empty list",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "page <= totalPages on an empty list",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-FEED-05",
+      "candidate_id": "v2-candidate-0065",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 28
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "totalPages >= 1 on an empty list",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "totalPages >= 1 on an empty list",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-FEED-05",
+      "candidate_id": "v2-candidate-0066",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 29
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == limit on an empty page",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == limit on an empty page",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-NAV-01",
+      "candidate_id": "v2-candidate-0008",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 30
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "every notification must carry a string status; the first seeded notification has no status field (seeded-data shape, not an API rule)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "every notification must carry a string status; the first seeded notification has no status field (seeded-data shape, not an API rule)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-NAV-01",
+      "candidate_id": "v2-candidate-0025",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 31
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "createdAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "createdAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-NAV-01",
+      "candidate_id": "v2-candidate-0026",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 32
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "modifiedAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "modifiedAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-NAV-01",
+      "candidate_id": "v2-candidate-0027",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 33
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "requestResolvedAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "requestResolvedAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-NAV-01",
+      "candidate_id": "v2-candidate-0036",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 34
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "createdAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "createdAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-NAV-01",
+      "candidate_id": "v2-candidate-0088",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 35
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "bank account createdAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "bank account createdAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-NAV-01",
+      "candidate_id": "v2-candidate-0089",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 36
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "bank account modifiedAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "bank account modifiedAt asserted as yyyy-mm-dd; ISO-8601 timestamps",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-SEARCH-01",
+      "candidate_id": "v2-candidate-0002",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 37
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "search results' firstName must contain q; the search also matches last name / username (Kristian)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "search results' firstName must contain q; the search also matches last name / username (Kristian)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-SEARCH-01",
+      "candidate_id": "v2-candidate-0030",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 38
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "same as v2-candidate-0002",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "same as v2-candidate-0002",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L1-SETTINGS-01",
+      "candidate_id": "v2-candidate-0007",
+      "contract_kind": "C02",
+      "protocol": "V1",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 39
+      },
+      "initial_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "PATCH sent the same defaultPrivacyLevel as before, so the V1 treatment has no observable effect",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "PATCH sent the same defaultPrivacyLevel as before, so the V1 treatment has no observable effect",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L2-REQUEST-01",
+      "candidate_id": "v2-candidate-0005",
+      "contract_kind": "C02",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 40
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "requestStatus expected to equal transactionType ('request'); the status is 'pending'",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "requestStatus expected to equal transactionType ('request'); the status is 'pending'",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L2-SETTINGS-01",
+      "candidate_id": "v2-candidate-0004",
+      "contract_kind": "C02",
+      "protocol": "V1",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 41
+      },
+      "initial_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "no treatment effect (same value patched)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "IP",
+        "lead": "",
+        "note": "no treatment effect (same value patched)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L3-PAYMENT-01",
+      "candidate_id": "v2-candidate-0033",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 42
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "createdAt is actually an ISO-8601 date-time (e.g. 2026-09-12T18:58:00.171Z), while the candidate wrongly fixed the format as yyyy-mm-dd; M12 refuted it correctly. Before the fix the candidate was not executed because of a prerequisite failure; after the fix it entered execution and was refuted.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "createdAt is actually an ISO-8601 date-time (e.g. 2026-09-12T18:58:00.171Z), while the candidate wrongly fixed the format as yyyy-mm-dd; M12 refuted it correctly. Before the fix the candidate was not executed because of a prerequisite failure; after the fix it entered execution and was refuted.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L3-PAYMENT-01",
+      "candidate_id": "v2-candidate-0038",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 43
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "createdAt is actually an ISO-8601 date-time (e.g. 2026-09-12T18:58:00.171Z), while the candidate wrongly fixed the format as yyyy-mm-dd; M12 refuted it correctly. Before the fix the candidate was not executed because of a prerequisite failure; after the fix it entered execution and was refuted.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "createdAt is actually an ISO-8601 date-time (e.g. 2026-09-12T18:58:00.171Z), while the candidate wrongly fixed the format as yyyy-mm-dd; M12 refuted it correctly. Before the fix the candidate was not executed because of a prerequisite failure; after the fix it entered execution and was refuted.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L3-REQUEST-REJECT-01",
+      "candidate_id": "v2-candidate-0015",
+      "contract_kind": "C04",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 44
+      },
+      "initial_classification": {
+        "code": "RD",
+        "lead": "L8",
+        "note": "read-preservation across actor_b logout is a wrong claim, but the post-logout ListBankAccount query answered HTTP 200 with a server TypeError instead of an authentication error; reproduced on the unpatched copy (reproduce_rwa_lead8.py, REST control returns 401)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "RD",
+        "lead": "L8",
+        "note": "read-preservation across actor_b logout is a wrong claim, but the post-logout ListBankAccount query answered HTTP 200 with a server TypeError instead of an authentication error; reproduced on the unpatched copy (reproduce_rwa_lead8.py, REST control returns 401)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors",
+        "paper_defect_id": "D7"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L3-REQUEST-REJECT-01",
+      "candidate_id": "v2-candidate-0018",
+      "contract_kind": "C04",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 45
+      },
+      "initial_classification": {
+        "code": "RD",
+        "lead": "L1",
+        "note": "PATCH requestStatus=rejected changed transaction.status from pending to complete (rejected request marked complete; reproduced lead L1)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "RD",
+        "lead": "L1",
+        "note": "PATCH requestStatus=rejected changed transaction.status from pending to complete (rejected request marked complete; reproduced lead L1)",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors",
+        "paper_defect_id": "D1"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L3-REQUEST-REJECT-01",
+      "candidate_id": "v2-candidate-0025",
+      "contract_kind": "C04",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 46
+      },
+      "initial_classification": {
+        "code": "RD",
+        "lead": "L1",
+        "note": "same observation on a second candidate variant",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "RD",
+        "lead": "L1",
+        "note": "same observation on a second candidate variant",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors",
+        "paper_defect_id": "D1"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L3-REQUEST-REJECT-01",
+      "candidate_id": "v2-candidate-0058",
+      "contract_kind": "C05",
+      "protocol": "V5",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 47
+      },
+      "initial_classification": {
+        "code": "RD",
+        "lead": "L2",
+        "note": "repeating the reject PATCH was accepted again (204) instead of being rejected; same family as the double-accept lead L2",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "RD",
+        "lead": "L2",
+        "note": "repeating the reject PATCH was accepted again (204) instead of being rejected; same family as the double-accept lead L2",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors",
+        "paper_defect_id": "D2"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L4-PAYMENT-FEEDS-01",
+      "candidate_id": "v2-candidate-0013",
+      "contract_kind": "C14",
+      "protocol": "V9",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 48
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "sum of the listed amounts asserted equal to one transaction's amount",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "sum of the listed amounts asserted equal to one transaction's amount",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L4-PAYMENT-FEEDS-01",
+      "candidate_id": "v2-candidate-0017",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 49
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == limit on an empty page",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == limit on an empty page",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L4-PAYMENT-FEEDS-01",
+      "candidate_id": "v2-candidate-0024",
+      "contract_kind": "C14",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 50
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == limit on an empty page",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == limit on an empty page",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L4-PAYMENT-FEEDS-01",
+      "candidate_id": "v2-candidate-0028",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 51
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == limit on an empty page",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == limit on an empty page",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L4-PAYMENT-FEEDS-01",
+      "candidate_id": "v2-candidate-0048",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 52
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == limit on an empty page",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == limit on an empty page",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L4-REQUEST-NOTIFY-01",
+      "candidate_id": "v2-candidate-0042",
+      "contract_kind": "C04",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 53
+      },
+      "initial_classification": {
+        "code": "RD",
+        "lead": "L1",
+        "note": "reject marks the request complete",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "RD",
+        "lead": "L1",
+        "note": "reject marks the request complete",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors",
+        "paper_defect_id": "D1"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L4-REQUEST-NOTIFY-01",
+      "candidate_id": "v2-candidate-0053",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 54
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "createdAt is actually an ISO-8601 date-time (e.g. 2026-09-12T18:58:00.171Z), while the candidate wrongly fixed the format as yyyy-mm-dd; M12 refuted it correctly. Before the fix the candidate was not executed because of a prerequisite failure; after the fix it entered execution and was refuted.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": null,
+        "note": "createdAt is actually an ISO-8601 date-time (e.g. 2026-09-12T18:58:00.171Z), while the candidate wrongly fixed the format as yyyy-mm-dd; M12 refuted it correctly. Before the fix the candidate was not executed because of a prerequisite failure; after the fix it entered execution and was refuted.",
+        "reviewed_at": "2026-09-12",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L4-REQUEST-NOTIFY-01",
+      "candidate_id": "v2-candidate-0086",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 55
+      },
+      "initial_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == limit on a short page",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "WH",
+        "lead": "",
+        "note": "results count == limit on a short page",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L4-REQUEST-NOTIFY-01",
+      "candidate_id": "v2-candidate-0121",
+      "contract_kind": "C04",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 56
+      },
+      "initial_classification": {
+        "code": "RD",
+        "lead": "L1",
+        "note": "reject marks the request complete",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "RD",
+        "lead": "L1",
+        "note": "reject marks the request complete",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors",
+        "paper_defect_id": "D1"
+      }
+    },
+    {
+      "subject": "rwa",
+      "run": "m11fix-01",
+      "case": "L4-REQUEST-REJECT-01",
+      "candidate_id": "v2-candidate-0048",
+      "contract_kind": "C04",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/deepseek-full-20260912/refuted-review-final.json",
+        "record_index": 57
+      },
+      "initial_classification": {
+        "code": "RD",
+        "lead": "L1",
+        "note": "reject marks the request complete",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors"
+      },
+      "final_classification": {
+        "code": "RD",
+        "lead": "L1",
+        "note": "reject marks the request complete",
+        "reviewer": "author review against the execution evidence (2026-09-12); notes drafted with AI assistance and confirmed by the authors",
+        "paper_defect_id": "D1"
+      }
+    },
+    {
+      "subject": "umami",
+      "run": "full-01",
+      "case": "L2-USER-02",
+      "candidate_id": "v2-candidate-0027",
+      "contract_kind": "C02",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 1
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "U1",
+        "lead": null,
+        "note": "候选要求回读的 $.username 等于 POST /api/users 请求体里的 username（'Test-user'）；固定版 Umami 3.4.0 在创建时就把用户名折成小写：POST /api/users 处理函数 createUser({... username: g.toLowerCase() ...})（镜像 /app/.next/server/chunks/[root-of-the-server]__1zffp94._.js 偏移 ~1851），查询侧 getUserByUsername 也用 where:{username:t.toLowerCase()} 做键，说明用户名按设计是大小写不敏感的规范化标识。创建响应本身已经返回 'test-user'，与回读一致，应用没有自相矛盾；把提交值当作原样保存是候选的错误命题。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "U1",
+        "lead": null,
+        "note": "候选要求回读的 $.username 等于 POST /api/users 请求体里的 username（'Test-user'）；固定版 Umami 3.4.0 在创建时就把用户名折成小写：POST /api/users 处理函数 createUser({... username: g.toLowerCase() ...})（镜像 /app/.next/server/chunks/[root-of-the-server]__1zffp94._.js 偏移 ~1851），查询侧 getUserByUsername 也用 where:{username:t.toLowerCase()} 做键，说明用户名按设计是大小写不敏感的规范化标识。创建响应本身已经返回 'test-user'，与回读一致，应用没有自相矛盾；把提交值当作原样保存是候选的错误命题。"
+      }
+    },
+    {
+      "subject": "umami",
+      "run": "full-01",
+      "case": "L3-TEAM-04",
+      "candidate_id": "v2-candidate-0011",
+      "contract_kind": "C01",
+      "protocol": "V4",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 2
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "U2",
+        "lead": null,
+        "note": "P14 added：成员取自 producer_response '$'（POST /api/teams/join 的响应，是一条 TeamUser 成员记录，id=a882e49e-...），集合取 GET /api/users/<id>/teams 的 $.data（元素是 Team，id=8c9be843-...），identity 用 $.id 对 $.id，两类 id 永远不可能相等，故 before/after 匹配数都是 0。加入团队实际成功：before count=0，after count=1 且成员列表里含该用户（role=team-member）。角色绑定错资源，候选构造错误。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "U2",
+        "lead": null,
+        "note": "P14 added：成员取自 producer_response '$'（POST /api/teams/join 的响应，是一条 TeamUser 成员记录，id=a882e49e-...），集合取 GET /api/users/<id>/teams 的 $.data（元素是 Team，id=8c9be843-...），identity 用 $.id 对 $.id，两类 id 永远不可能相等，故 before/after 匹配数都是 0。加入团队实际成功：before count=0，after count=1 且成员列表里含该用户（role=team-member）。角色绑定错资源，候选构造错误。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DASHBOARD-03",
+      "candidate_id": "v2-candidate-0029",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 3
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCDETAIL-01",
+      "candidate_id": "v2-candidate-0015",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 4
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCDETAIL-01",
+      "candidate_id": "v2-candidate-0030",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 5
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCDETAIL-02",
+      "candidate_id": "v2-candidate-0017",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 6
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCDETAIL-02",
+      "candidate_id": "v2-candidate-0032",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 7
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCDETAIL-05",
+      "candidate_id": "v2-candidate-0021",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 8
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCDETAIL-05",
+      "candidate_id": "v2-candidate-0089",
+      "contract_kind": "C14",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 9
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-03",
+      "candidate_id": "v2-candidate-0035",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 10
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-03",
+      "candidate_id": "v2-candidate-0036",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 11
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-05",
+      "candidate_id": "v2-candidate-0003",
+      "contract_kind": "C14",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 12
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-05",
+      "candidate_id": "v2-candidate-0028",
+      "contract_kind": "C14",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 13
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0009",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 14
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0014",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 15
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0015",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 16
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0016",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 17
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0017",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 18
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0026",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 19
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0035",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 20
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0037",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 21
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0038",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 22
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0039",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 23
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0040",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 24
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0042",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 25
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0043",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 26
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0044",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 27
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-DOCLIST-07",
+      "candidate_id": "v2-candidate-0045",
+      "contract_kind": "C08",
+      "protocol": "V3",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 28
+      },
+      "initial_classification": {
+        "code": "IP",
+        "group": "P3",
+        "lead": null,
+        "note": "C08/V3 P17 subset：候选要求 followup_query:q1（GET /api/documents/?owner__id__in=2&page=1&page_size=50）的 $.results 按 $.id 是 source_query（同一端点不带 owner 过滤）$.results 的子集。两次查询的 count 都是 61、返回的文档 owner 全为 2，说明 owner 过滤在本场景里选中了全部文档、没有处理效应；而 page_size=50 < 61，两边各自只返回第 1 页的 50 条，交集 42、各有 8 条独有（过滤侧多出 5,55..61，不过滤侧多出 12..19）。排序键不是全序：Document.created 是 models.DateField（src/documents/models.py:247-251），61 份文档只有 3 个不同日期（2021-01-01 / 2022-12-11 / 2026-09-20），Meta.ordering=('-created',)（models.py:340-341）与 DocumentsOrderingFilter 都没有次级键（ordering_fields 见 views.py:1031-1045），并列行的返回顺序随执行计划而变。因此在第 1 页窗口上比较集合无法判定该子集关系：数据量与观察范围使场景不可判定，既不是缺陷也不是候选命题本身错误。这 14 条候选除 candidate_id 与所引 evidence_card 外完全相同（同一 producer/consumer request_ref r20260920-085841-faf8:request:9 / :66，同一谓词），是同一命题的 14 份重复。"
+      },
+      "adjudication_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+      "final_classification": {
+        "code": "RD",
+        "paper_defect_id": "D8",
+        "decision_ref": "eval/ui_semantics/refuted-review-20260923/final-adjudication-source-20260923.json",
+        "note": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L1-SETTINGS-03",
+      "candidate_id": "v2-candidate-0008",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 29
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L2-DOCEDIT-01",
+      "candidate_id": "v2-candidate-0029",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 30
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L2-DOCEDIT-02",
+      "candidate_id": "v2-candidate-0003",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 31
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L3-SHARING-01",
+      "candidate_id": "v2-candidate-0019",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 32
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P1",
+        "lead": null,
+        "note": "P15 唯一性：候选要求 GET /api/ui_settings/ 的 $.permissions 数组元素互不相同；实际 166 个元素里 162 个不同，重复的恰好是 add/change/delete/view_logentry 各两次。固定版 3.2.0 源码 src/documents/views.py:4287-4288 `# strip <app_label>.` / `roles = map(lambda perm: re.sub(r\"^\\w+.\", \"\", perm), user.get_all_permissions())`：get_all_permissions() 返回 '<app_label>.<codename>' 的集合，去掉 app 前缀后不同 app 的同名 codename 就会相撞；本实例启用了审计日志（响应 settings.auditlog_enabled=true，settings/__init__.py:148 的 django.contrib.admin 与 :1046 追加的 auditlog 都注册了 LogEntry 模型）。元素唯一不是该字段的不变量，属于把非不变量当不变量。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L3-SHARING-01",
+      "candidate_id": "v2-candidate-0059",
+      "contract_kind": "C14",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 33
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L3-SHARING-02",
+      "candidate_id": "v2-candidate-0018",
+      "contract_kind": "C14",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 34
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P2",
+        "lead": null,
+        "note": "P19 count：候选把 GET /api/documents/ 响应里的 $.count 当作本页 $.results 的元素个数。$.count 是整个结果集的总数：固定版 src/paperless/views.py:61-83 StandardPagination.get_paginated_response 写 ('count', self.page.paginator.count)。八条的观测是 page_size=1 / count=8（tags__id__all=1），三条是 page_size=50 / count=61，都是分页端点上的跨页情形（与文 27 §15 的 PAGINATED 判定一致）。与 Conduit/RWA 先例里 'results count == pageData.limit' 同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "paperless",
+      "run": "m11fix-03",
+      "case": "L3-SHARING-02",
+      "candidate_id": "v2-candidate-0075",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 35
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "P4",
+        "lead": null,
+        "note": "forall + P10 date_yyyy_mm_dd：候选要求 GET /api/users/ 每个结果的 $.date_joined 形如 yyyy-mm-dd；实际是 ISO-8601 时间戳（如 2026-09-20T12:06:20.641751Z，2 条结果都不符）。date_joined 是 Django auth.User 的 DateTimeField，DRF 按 ISO-8601 序列化。与 Conduit/RWA 先例中 createdAt 被误定为 yyyy-mm-dd 的 12 条同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "P4",
+        "lead": null,
+        "note": "forall + P10 date_yyyy_mm_dd：候选要求 GET /api/users/ 每个结果的 $.date_joined 形如 yyyy-mm-dd；实际是 ISO-8601 时间戳（如 2026-09-20T12:06:20.641751Z，2 条结果都不符）。date_joined 是 Django auth.User 的 DateTimeField，DRF 按 ISO-8601 序列化。与 Conduit/RWA 先例中 createdAt 被误定为 yyyy-mm-dd 的 12 条同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "ghost",
+      "run": "full-01",
+      "case": "L1-POST-05",
+      "candidate_id": "v2-candidate-0047",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 36
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "G1",
+        "lead": null,
+        "note": "forall + P10 date_yyyy_mm_dd：候选要求 GET /ghost/api/admin/posts/ 每个 $.published_at 形如 yyyy-mm-dd；实际是 2026-09-20T15:53:05.000Z。固定版 v5.130.6（本机 checkout ~/APITest/UISemTest-subjects/ghost，HEAD a07c753c8a）的输出序列化器 ghost/core/core/server/api/endpoints/utils/serializers/output/utils/date.js:4-18 对 created_at/updated_at/published_at 一律 moment(date).tz(...).toISOString(true)，不可能是纯日期。与 Conduit/RWA 先例同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "G1",
+        "lead": null,
+        "note": "forall + P10 date_yyyy_mm_dd：候选要求 GET /ghost/api/admin/posts/ 每个 $.published_at 形如 yyyy-mm-dd；实际是 2026-09-20T15:53:05.000Z。固定版 v5.130.6（本机 checkout ~/APITest/UISemTest-subjects/ghost，HEAD a07c753c8a）的输出序列化器 ghost/core/core/server/api/endpoints/utils/serializers/output/utils/date.js:4-18 对 created_at/updated_at/published_at 一律 moment(date).tz(...).toISOString(true)，不可能是纯日期。与 Conduit/RWA 先例同源，M12 驳回正确。"
+      }
+    },
+    {
+      "subject": "ghost",
+      "run": "full-01",
+      "case": "L1-POST-08",
+      "candidate_id": "v2-candidate-0030",
+      "contract_kind": "single_state_constraint",
+      "protocol": "V2",
+      "source_review": {
+        "path": "eval/ui_semantics/refuted-review-20260923/refuted-review-20260923.json",
+        "record_index": 37
+      },
+      "initial_classification": {
+        "code": "WH",
+        "group": "G1",
+        "lead": null,
+        "note": "forall + P10 date_yyyy_mm_dd：候选要求 GET /ghost/api/admin/posts/ 每个 $.published_at 形如 yyyy-mm-dd；实际是 2026-09-20T15:53:05.000Z。固定版 v5.130.6（本机 checkout ~/APITest/UISemTest-subjects/ghost，HEAD a07c753c8a）的输出序列化器 ghost/core/core/server/api/endpoints/utils/serializers/output/utils/date.js:4-18 对 created_at/updated_at/published_at 一律 moment(date).tz(...).toISOString(true)，不可能是纯日期。与 Conduit/RWA 先例同源，M12 驳回正确。"
+      },
+      "final_classification": {
+        "code": "WH",
+        "group": "G1",
+        "lead": null,
+        "note": "forall + P10 date_yyyy_mm_dd：候选要求 GET /ghost/api/admin/posts/ 每个 $.published_at 形如 yyyy-mm-dd；实际是 2026-09-20T15:53:05.000Z。固定版 v5.130.6（本机 checkout ~/APITest/UISemTest-subjects/ghost，HEAD a07c753c8a）的输出序列化器 ghost/core/core/server/api/endpoints/utils/serializers/output/utils/date.js:4-18 对 created_at/updated_at/published_at 一律 moment(date).tz(...).toISOString(true)，不可能是纯日期。与 Conduit/RWA 先例同源，M12 驳回正确。"
+      }
+    }
+  ],
+  "confirmed_defect_count": 9,
+  "confirmed_defect_catalog_ref": "docs/DEFECTS.md"
+}

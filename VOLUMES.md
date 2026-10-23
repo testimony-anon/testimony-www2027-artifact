@@ -1,0 +1,22 @@
+# Data volumes
+
+The six anonymous archives are attached to [Release `v1.0-review`](https://github.com/testimony-anon/testimony-www2027-artifact/releases/tag/v1.0-review). Their actual sizes and SHA-256 values are listed below. Identity-only archive and snapshot transformations, and the separate historical source-digest mappings, are documented in [ANONYMIZATION.md](docs/ANONYMIZATION.md).
+
+Download the six archives and `SHA256SUMS.txt` and `SOURCE_FILES.sha256` from the Release into a `volumes/` directory. From the repository root, verify and extract the required data on a working copy:
+
+```sh
+(cd volumes && shasum -a 256 -c SHA256SUMS.txt)
+shasum -a 256 -c volumes/SOURCE_FILES.sha256
+zstd -dc volumes/vol1-mainline-runs-conduit-rwa.tar.zst | tar -xf - -C .
+```
+
+Run `python3 scripts/relocate.py` from the repository root after extraction. Volumes 1–3 contain the Conduit and RWA runs; volumes 4–6 contain the Umami, Paperless-ngx and Ghost runs. Main-line, ablation and fault-evidence material occupy separate volumes. Extract all six before the complete packaged self-check.
+
+| Volume | Download | Content | Size | SHA-256 |
+|---|---|---|---:|---|
+| `vol1-mainline-runs-conduit-rwa.tar.zst` | [archive](https://github.com/testimony-anon/testimony-www2027-artifact/releases/download/v1.0-review/vol1-mainline-runs-conduit-rwa.tar.zst) | eval/ui_semantics/deepseek-full-20260912/conduit/full-01, eval/ui_semantics/deepseek-full-20260912/conduit/retry-01, eval/ui_semantics/deepseek-full-20260912/conduit/m11fix-01, eval/ui_semantics/deepseek-full-20260912/rwa/full-01, eval/ui_semantics/deepseek-full-20260912/rwa/retry-01, eval/ui_semantics/deepseek-full-20260912/rwa/rerecord-01, eval/ui_semantics/deepseek-full-20260912/rwa/m11fix-01, eval/ui_semantics/deepseek-full-20260912/rwa/m11fix-02 | 148.5 MB | `447a7c252848957c4617868b124f6f84ce702c176ddb2df6227f4fa75d2676cb` |
+| `vol2-ablation-runs-conduit-rwa.tar.zst` | [archive](https://github.com/testimony-anon/testimony-www2027-artifact/releases/download/v1.0-review/vol2-ablation-runs-conduit-rwa.tar.zst) | eval/ui_semantics/deepseek-ablation-20260913/conduit/temporal-01, eval/ui_semantics/deepseek-ablation-20260913/conduit/flat-01, eval/ui_semantics/deepseek-ablation-20260913/rwa/temporal-01, eval/ui_semantics/deepseek-ablation-20260913/rwa/temporal-retry-02, eval/ui_semantics/deepseek-ablation-20260913/rwa/flat-01, eval/ui_semantics/deepseek-ablation-20260913/rwa/flat-retry-01, eval/ui_semantics/deepseek-ablation-20260913/rwa/flat-fix-01 | 164.4 MB | `54bbc3333c1ba99789be4f41ca6497dd3e97e46be305e73df6f06ce40f1e737d` |
+| `vol3-rq2-runs-conduit-rwa.tar.zst` | [archive](https://github.com/testimony-anon/testimony-www2027-artifact/releases/download/v1.0-review/vol3-rq2-runs-conduit-rwa.tar.zst) | eval/ui_semantics/rq2-deepseek-final2-20260912/suite/runs | 2.8 MB | `cf2a756b1bb5e583b5167a3c9d4a29a8a0be8d96450f5cf04a183813309eef1e` |
+| `vol4-mainline-runs-umami-paperless-ghost.tar.zst` | [archive](https://github.com/testimony-anon/testimony-www2027-artifact/releases/download/v1.0-review/vol4-mainline-runs-umami-paperless-ghost.tar.zst) | eval/ui_semantics/umami-20260921/umami/full-01, eval/ui_semantics/paperless-20260921/paperless/m11fix-03, eval/ui_semantics/paperless-20260921/paperless/full-01, eval/ui_semantics/ghost-20260921/ghost/full-01 | 110.7 MB | `30baafd67bd9e93349aaf26ff407c099914d891c58e29336dde808e221ad6499` |
+| `vol5-ablation-runs-umami-paperless-ghost.tar.zst` | [archive](https://github.com/testimony-anon/testimony-www2027-artifact/releases/download/v1.0-review/vol5-ablation-runs-umami-paperless-ghost.tar.zst) | eval/ui_semantics/subjects-ablation-20260921/umami/temporal-01, eval/ui_semantics/subjects-ablation-20260921/umami/flat-01, eval/ui_semantics/subjects-ablation-20260921/paperless/temporal-01, eval/ui_semantics/subjects-ablation-20260921/paperless/flat-01, eval/ui_semantics/subjects-ablation-20260921/ghost/temporal-01, eval/ui_semantics/subjects-ablation-20260921/ghost/flat-01 | 163.5 MB | `bb4f7fd670039fe4575a70eebbfd5018cf5853667f3708fc916364fd89feb2dd` |
+| `vol6-rq2-runs-umami-paperless-ghost.tar.zst` | [archive](https://github.com/testimony-anon/testimony-www2027-artifact/releases/download/v1.0-review/vol6-rq2-runs-umami-paperless-ghost.tar.zst) | eval/ui_semantics/rq2-subjects-20260921/suite/runs | 1.2 MB | `d20376abb75833c8e356b45b723f47b0fbcc23a431bb953d0d56879860291bea` |

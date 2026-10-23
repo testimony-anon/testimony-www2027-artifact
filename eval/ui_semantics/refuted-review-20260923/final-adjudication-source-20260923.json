@@ -1,0 +1,30 @@
+{
+  "source_document": "docs/design/subjects-expansion-20260919/27-论文数字汇总表.md",
+  "source_document_sha256": "0b03a30a511fd902bf012a802ca8f88c442e3c56684eeb7715413f8b64329502",
+  "source_line": 808,
+  "decision_text": "- 采用记录（2026-09-23，协调会话）：D8 判定为缺陷，L1-DOCLIST-07 的 14 条 P3 候选改归「关联真实缺陷」（失败的直接成因就是并列行顺序不稳定；反证：换全序键后同样的窗口比较不失败）。论文采用 94 = 22 关联缺陷 / 63 候选错误 / 8 不适定 / 1 待复现；缺陷 D1–D8 共 8 个。",
+  "affected_records": {
+    "subject": "paperless",
+    "case": "L1-DOCLIST-07",
+    "initial_group": "P3",
+    "candidate_ids": [
+      "v2-candidate-0009",
+      "v2-candidate-0014",
+      "v2-candidate-0016",
+      "v2-candidate-0017",
+      "v2-candidate-0026",
+      "v2-candidate-0035",
+      "v2-candidate-0037",
+      "v2-candidate-0038",
+      "v2-candidate-0039",
+      "v2-candidate-0040",
+      "v2-candidate-0042",
+      "v2-candidate-0043",
+      "v2-candidate-0044",
+      "v2-candidate-0045"
+    ]
+  },
+  "initial_code": "IP",
+  "final_code": "RD",
+  "paper_defect_id": "D8"
+}
